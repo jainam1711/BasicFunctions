@@ -1,0 +1,22 @@
+{
+    "name": "jainam/basicfunctions",
+    "description": "Basic functionalities login, change passowrd, forgot password",
+    "type": "library",
+    "keywords": ["login","laravel login","laravel common functions","common functions","easy functions", "change password", "forgot password"],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Jainam Shah",
+            "email": "jainam74980@email.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "jainam\\BasicFunctions\\": "src/"
+        }
+    }
+}
