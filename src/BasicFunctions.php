@@ -1,6 +1,6 @@
 <?php
 /*
- * (c) YOUR NAME <jainam7480@gmail.com>
+ * (c) Jainam Shah <jainam7480@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -34,7 +34,7 @@ class BasicFunctions extends Controller
                 $data = $modalName::first();
                 $returnData = UtilityController::Generateresponse(1, 'GENERAL_SUCCESS', Response::HTTP_OK, $data, 1);
             } else {
-                $returnData = UtilityController::Generateresponse(0, 'EMPTY_MESSAGE', Response::HTTP_BAD_REQUEST, '', 1);
+                $returnData = UtilityController::Generateresponse(0, 'EMPTY_MESSAGE', Response::HTTP_NO_CONTENT, '', 1);
             }
             return $returnData;
         }
@@ -60,10 +60,10 @@ class BasicFunctions extends Controller
                 if(Hash::check($request->password, $data->password)) {
                     $returnData = UtilityController::Generateresponse(1, 'GENERAL_SUCCESS', Response::HTTP_OK, $data, 1);
                 } else {
-                    $returnData = UtilityController::Generateresponse(0, 'GENERAL_ERROR', Response::HTTP_BAD_REQUEST, '', 1);
+                    $returnData = UtilityController::Generateresponse(0, 'GENERAL_ERROR', Response::HTTP_NO_CONTENT, '', 1);
                 }
             } else {
-                $returnData = UtilityController::Generateresponse(0, 'EMAIL_NOT_EXISTS', Response::HTTP_BAD_REQUEST, '', 1);
+                $returnData = UtilityController::Generateresponse(0, 'EMAIL_NOT_EXISTS', Response::HTTP_OK, '', 1);
             }
             return $returnData;
         }
@@ -86,7 +86,7 @@ class BasicFunctions extends Controller
             if($logout) {
                 $returnData = UtilityController::Generateresponse(1, 'LOGOUT_SUCCESS', Response::HTTP_OK, 'LOGOUT_SUCCESS', 1);
             } else {
-                $returnData = UtilityController::Generateresponse(1, 'GENERAL_ERROR', Response::HTTP_BAD_REQUEST, 'GENERAL_ERROR', 1);
+                $returnData = UtilityController::Generateresponse(1, 'GENERAL_ERROR', Response::HTTP_NO_CONTENT, 'GENERAL_ERROR', 1);
             }
             return view('auth.login');
         }
@@ -121,10 +121,10 @@ class BasicFunctions extends Controller
                 if($updatePassword) {
                     $returnData = UtilityController::Generateresponse(1, 'GENERAL_SUCCESS', Response::HTTP_OK, '', 1);
                 } else {
-                    $returnData = UtilityController::Generateresponse(0, 'GENERAL_ERROR', Response::HTTP_BAD_REQUEST, '', 1);
+                    $returnData = UtilityController::Generateresponse(0, 'GENERAL_ERROR', Response::HTTP_NO_CONTENT, '', 1);
                 }
             } else {
-                return UtilityController::Generateresponse(0, 'PASSWORD_MISMATCH', Response::HTTP_BAD_REQUEST, '2', 1);
+                return UtilityController::Generateresponse(0, 'PASSWORD_MISMATCH', Response::HTTP_OK, '2', 1);
             }
             DB::commit();
             return $returnData;
