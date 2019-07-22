@@ -6,7 +6,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace App\Http\Controllers;
+namespace Jainam;
 
 use Auth;
 use Hash;
