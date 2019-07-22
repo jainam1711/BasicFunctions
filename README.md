@@ -1,7 +1,7 @@
 # BasicFunction
 Laravel basic functions
 
-# Usage:-
+## Usage:-
 ``` composer require jainam/basicfunctions ```
 
 # Controller:-
