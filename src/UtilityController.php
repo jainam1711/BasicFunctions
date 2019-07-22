@@ -28,7 +28,7 @@
 Pre-Load all necessary library & name space
  */
 
-namespace App\Http\Controllers;
+namespace Jainam;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
@@ -498,33 +498,10 @@ class UtilityController extends BaseController
 
     /*
     |--------------------------------------------------------------------------
-    | generateReferralCode
-    |--------------------------------------------------------------------------
-    |
-    | Author    : Zalak Kapadia <zalak@creolestudios.com>
-    | Purpose   : to generate unique referral code
-    | In Params : 
-    | Date      : 25 December 2018
-    |
-     */
-
-    public static function generateReferralCode($length = 10)
-    {
-        $characters       = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString     = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
-    }
-
-    /*
-    |--------------------------------------------------------------------------
     | Getmessage
     |--------------------------------------------------------------------------
     |
-    | Author    : Zalak Kapadia <zalak@creolestudios.com>
+    | Author    : Jainam Shah
     | Purpose   : get message from constant file
     | In Params : 
     | Date      : 25 December 2018
